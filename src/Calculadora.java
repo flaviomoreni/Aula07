@@ -20,21 +20,13 @@ public class Calculadora {
 
 			switch (opcao) {
 			case 1:
-				System.out.println("\n\nDigite o 1º valor:");
-				valor1 = leitor.nextDouble();
-				System.out.println("\n\nDigite o 2º valor:");
-				valor2 = leitor.nextDouble();
-
-				System.out.println("Os valores " + valor1 + " e " + valor2 + " foram armazenados\n\n");
-
+				processarDigitacao(leitor);
 				break;
 			case 2:
 				processarSoma();
 				break;
 			case 3:
-				System.out.println("\n\nRealizando a subtração entre " + valor1 + " e " + valor2);
-				double resultadoSub = subtrair(valor1, valor2);
-				imprimirResultado( resultadoSub );
+				processarSubtracao();
 				break;
 			case 4:
 				System.out.println("\n\nRealizando a divisão entre " + valor1 + " e " + valor2);
@@ -54,6 +46,23 @@ public class Calculadora {
 		}
 		leitor.close();
 
+	}
+
+
+	private static void processarDigitacao(Scanner leitor) {
+		System.out.println("\n\nDigite o 1º valor:");
+		valor1 = leitor.nextDouble();
+		System.out.println("\n\nDigite o 2º valor:");
+		valor2 = leitor.nextDouble();
+
+		System.out.println("Os valores " + valor1 + " e " + valor2 + " foram armazenados\n\n");
+	}
+
+
+	private static void processarSubtracao() {
+		System.out.println("\n\nRealizando a subtração entre " + valor1 + " e " + valor2);
+		double resultadoSub = subtrair(valor1, valor2);
+		imprimirResultado( resultadoSub );
 	}
 
 	
